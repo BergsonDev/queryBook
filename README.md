@@ -1,4 +1,4 @@
-# queryBook
+# MVP - Projeção de Software
 📚 MVP – Consulta de Livros
 
 Projeto desenvolvido como MVP (Minimum Viable Product) de uma funcionalidade que integrará um sistema maior no futuro.
