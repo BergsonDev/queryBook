@@ -75,7 +75,7 @@ function getBooks(link){
         const loading = document.querySelector(".loading");
         books.forEach(book => {
             console.log(book.id)
-            addCard(book.volumeInfo.title, book.volumeInfo.imageLinks.thumbnail, book.id)
+            addCard(book.volumeInfo.title, book.volumeInfo.imageLinks.thumbnail.replace(/^http:\/\//, "https://"), book.id)
         });
         loading.style = 'display: none !important'
         document.querySelector(".row").style = ''
