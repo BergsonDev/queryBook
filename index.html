@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Alatsi&display=swap" rel="stylesheet">
+    <title>Acervo Fucapi</title>
+</head>
+<style>
+    body{
+        background: #011C40;
+        /* width: 100%; */
+        /* height: auto; */
+    }
+    h1{
+        color: #f2f2f2;
+        font-family: 'Alata';
+    }
+    #search-area{
+        width: 350px;
+        span{
+            background-color: #034AA6;
+            border: none;
+            color: #f2f2f2;
+        }
+        button{
+            background-color: #034AA6;
+            color: #f2f2f2;
+            border: none;
+            font-family: 'Alatsi';
+        }
+        input{
+            color: #034AA6;
+            font-family: 'Alatsi';
+        }
+        input:focus{
+            box-shadow: none;
+        }
+    }
+    img{
+        /* height: 30% !important; */
+    }
+    .card{
+        background-color: transparent;
+        border: none;
+        width: 12rem;
+        p{
+            color: #f2f2f2;
+            font-family: 'Alatsi';
+        }
+        .info-book{
+            background-color: #BF9765;
+            color: #011C40;
+            font-family: 'Alatsi';
+        }
+    }
+    .arrows-pagination{
+        button{
+            color: #f2f2f2;
+        }
+        button:focus{
+            border: none;
+        }
+        button:hover{
+            color: #034AA6;
+        }
+    }
+    .modal-header{
+        background-color: #011C40;
+        p{
+            color: #f2f2f2;
+        }
+
+    }
+
+</style>
+<body>
+    <div class="d-flex flex-column p-1">
+        <h1 class="text-center">Acervo de Livros</h1>
+    </div>
+    <div id="search-area">
+        <div class="d-flex align-start mx-2 input-group flex-nowrap">
+            <span class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </span>
+            <input type="text" class="form-control" id="button" placeholder="Digite o título">
+            <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
+        </div>
+        <!-- <div class="d-flex align-start mx-2 input-group flex-nowrap">
+            <span class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </span>
+            <input type="text" class="form-control" id="button" placeholder="Digite o título">
+            <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
+        </div> -->
+    </div>
+   
+    <div class="d-flex justify-content-center loading">
+       <div class="spinner-border text-white" role="status">
+         <span class="visually-hidden">Loading...</span>
+       </div>
+   </div>
+    <div class="container-fluid my-2 ">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-1 g-lg-2" style="display: none;">
+            <!-- <div class="col d-flex justify-contentt-center">
+                <div class="card">
+                    <div class="card-title d-flex flex-column justify-content-center">
+                        <p class="text-center fs-2">Lorem Ipsum</p>
+                        <img class="img-fluid" src="http://books.google.com/books/content?id=q6BVCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api">
+                    </div>
+                    <div class="card-body text-center">
+                        <button class="btn info-book fs-4"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="d-flex justify-content-center arrows-pagination" >
+            <button class="btn arrows-btn-back" value="1" style="display: none;">
+                <ion-icon name="chevron-back-outline" class="fs-2"></ion-icon>
+            </button>
+            <button class="btn arrows-btn-next" value="2" style="display: none;">
+                <ion-icon name="chevron-forward-outline" class="fs-2"></ion-icon>
+            </button>
+        </div>
+    </div>
+    
+
+    <div  class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="modal-title fs-4" id="exampleModalLabel">Informações do Livro</p>
+            <button type="button" class="btn-close  btn-close-white btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+                <span class="fs-5 text-start" id="title-book">Título : </span>
+                <span class="fs-5 text-start" id="writer-book">Autor :</span>
+                <span class="fs-5 text-start" id="publisher-book">Editora :</span>
+                <span class="fs-5 text-start" id="synopsis-book">Descrição :</span>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
