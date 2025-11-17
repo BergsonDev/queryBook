@@ -8,12 +8,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alatsi&display=swap" rel="stylesheet">
     <title>Acervo Fucapi</title>
+    <link rel="icon" type="image/x-icon" href="/OLGA3.png">
 </head>
 <style>
     body{
         background: #011C40;
-        /* width: 100%; */
-        /* height: auto; */
+        width: 100%;
+        /* height:  */
     }
     h1{
         color: #f2f2f2;
@@ -98,7 +99,6 @@
             <button class="btn btn-outline-secondary" type="button">Pesquisar</button>
         </div> -->
     </div>
-   
     <div class="d-flex justify-content-center loading">
        <div class="spinner-border text-white" role="status">
          <span class="visually-hidden">Loading...</span>
@@ -146,11 +146,39 @@
           </div>
       </div>
     </div>
-
-
+    </div>
+    <!-- FOOTER FIXO COM BOOTSTRAP -->
+    <footer class="footer-fixed">
+        <div class="container">
+            <div class="row justify-content-center align-items-center py-2">
+                <!-- Imagem 1 -->
+                <div class="col-auto">
+                    <img src="OLGA.png" alt="Logo Fucapi" class="img-fluid img-footer" style="width: 100px;">
+                </div>
+                
+                <!-- Separador X - visível apenas em desktop -->
+                <div class="col-auto d-none d-md-block">
+                    <span class="mx-3 fs-5 text-white">X</span>
+                </div>
+                
+                <!-- Imagem 2 -->
+                <div class="col-auto">
+                    <img src="logo-fucapi.png" alt="Logo OLGA" class="img-fluid img-footer" style="width: 70px;">
+                </div>
+            </div>
+            
+            <!-- Texto de copyright -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small class="text-white-50">&copy; 2025 GRUPO OLGA</small>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="main.js"></script>
+    
 </body>
 </html>
