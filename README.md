@@ -54,4 +54,20 @@ Servir como base para testes e evolução da interface e das funcionalidades.
 
 📦 Como Executar o Projeto
 
-Clone este repositório:
+1. Clone este repositório:
+
+```
+git clone https://github.com/BergsonDev/queryBook.git
+```
+
+2. Acesse a pasta do projeto
+```
+cd 'nome-pasta'
+```
+
+3. Abra o arquivo index.html diretamente no navegador.
+Não é necessária a instalação de dependências ou servidor local.
+
+👥 Equipe
+
+Projeto desenvolvido pelo grupo como parte de uma apresentação acadêmica, representando nossas habilidades atuais em desenvolvimento front-end e integração com APIs.
